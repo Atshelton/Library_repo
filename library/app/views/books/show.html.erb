@@ -1,0 +1,17 @@
+<h1>Welcome please add a book to view its information</h1>
+<p>
+<% @books.each do |book| %>
+<p>
+  <a href="/library/book.id"><%= book.name %></a>
+</p>
+<% end %>
+</p>
+<%= form_tag do %>
+  <%= text_field_tag 'book[name]' %>
+  <%= submit_tag "Add Book!"%>
+<% end %>
+
+
+<p>
+Would you like to return to the Homepage? <a href="/">Click Here</a>
+</p>
