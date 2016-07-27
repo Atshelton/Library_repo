@@ -15,9 +15,27 @@ class BooksController < ApplicationController
   end
 
   def view_contents
+    @book = Book.find(params["id"])
   end
 
-  def edit_book
+  def edit
+    @book = Book.find(params["id"])
+    render :edit
   end
 
+  def update
+    @book = Book.find(params["id"])
+    @book.update(book_params)
+    redirect_to library_path(id: @book.id)
+  end
+
+  def burn
+    @book = Book.find(params["id"])
+    @book.destroy
+    redirect_to :library
+  end
+
+  private def book_params
+    params.require("book").permit(:name)
+  end
 end

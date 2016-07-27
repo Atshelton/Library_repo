@@ -1,0 +1,10 @@
+<h1>Please Edit this book: <%= @book.name %></h1>
+
+<%= @book.inspect %>
+<%= form_tag do %>
+  <%= text_field_tag "book [name]", @book.name %>
+  <%= submit_tag %>
+<% end %>
+
+
+When done editing to return to the library page<a href="/library">Click Here</a>
