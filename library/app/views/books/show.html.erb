@@ -2,11 +2,11 @@
 <p>
 <% @books.each do |book| %>
 <p>
-  <a href="/library/id/edit"><%= book.name %></a>
+  <a href="/library/books/<%= book.id %>"><%= book.name %></a>
 </p>
 <% end %>
 </p>
-<%= form_tag do %>
+<%= form_tag "" do %>
   <%= text_field_tag 'book[name]' %>
   <%= submit_tag "Add Book!"%>
 <% end %>
