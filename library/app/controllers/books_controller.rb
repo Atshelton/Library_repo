@@ -32,7 +32,7 @@ class BooksController < ApplicationController
   def burn
     @book = Book.find(params["id"])
     @book.destroy
-    redirect_to :library
+    redirect_to book_path
   end
 
   private def book_params

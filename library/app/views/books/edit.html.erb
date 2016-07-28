@@ -5,3 +5,8 @@
   <%= text_field_tag "book[name]", @book.name %>
   <%= submit_tag %>
 <% end %>
+
+
+<%= form_tag burn_book_path(id: @book.id), method: :delete do %>
+<%= submit_tag "Burn Book to Ashes" %>
+<% end %>
